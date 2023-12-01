@@ -2,7 +2,7 @@ import os
 
 
 
-path = "/home/adam/Documents/Github/Password-Cracker-real/password/paslist.txt"
+path = "/home/adam/Documents/Gitshub2/New-Password-Cracker/paslist.txt"
 print(os.getcwd())
 password = "someday"
 #test = open(path,'r')
@@ -11,15 +11,17 @@ password = "someday"
 count = 0
 with open(path, "r") as pList:
     
-    while count < 5:
+    while count < 1000000:
         count += 1
  
         # Get next line from file
         line = pList.readline()
- 
+        lineR = line.rstrip()
         # if line is empty
         # end of file is reached
-        if str(line) == "123456":
+        print("Trying: " + lineR)
+        if lineR == password:
+            print("Sucess the password is " + lineR)
             break
-        print("Line{}: {}".format(count, line.strip()))
+        #print("Line{}: {}".format(count, line.strip()))
 #test
