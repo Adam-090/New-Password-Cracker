@@ -13,7 +13,7 @@ with open(paths, "r") as pList:
         # Get next line from file
         line = pList.readline()
         lineR = line.rstrip()
-        hashedLine = hashlib.sha1(lineR.encode('utf-8')).hexdigest()
+        hashedLine = hashlib.sha256(lineR.encode('utf-8')).hexdigest()
         # if line is empty
         # end of file is reached
         print("Trying: " + hashedLine)
