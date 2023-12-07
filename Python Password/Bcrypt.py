@@ -1,4 +1,4 @@
-#Bcrypt
+##Bcrypt
 import bcrypt
 import os 
 passwordHash = (input("Enter the hash you want to convert ")).encode('utf-8')
