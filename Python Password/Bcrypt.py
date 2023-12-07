@@ -5,6 +5,7 @@ passwordHash = (input("Enter the hash you want to convert ")).encode('utf-8')
 paths = "/home/adam/Documents/Gitshub2/New-Password-Cracker/paslist.txt"
 print(os.getcwd())
 count = 0
+
 with open(paths, "r") as pList:
     
     while count < 1000000:
