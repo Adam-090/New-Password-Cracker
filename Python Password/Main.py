@@ -29,13 +29,14 @@ if type == "":
 if mode == "":
     mode = "dictionary"
 if (mode == "bruteforce") and (type== "Sha256" or type == "md5" or type == "bcrypt"):
-    print("hashes cant be bruteforced only plaintext")
+    print("hashes cant be bruteforced only plaintext switching type to plaintext")
     type = "plaintext"
 
 
 
 
 def Bcrypt():
+
     passwordHash = (sys.argv[1]).encode('utf-8')
     paths = "/home/adam/Documents/Gitshub2/New-Password-Cracker/paslist.txt"
     print(os.getcwd())
@@ -59,7 +60,7 @@ def Bcrypt():
             # if line is empty
             # end of file is reached
             print("Trying: " + str(lineR))
-            if bcrypt.checkpw(bytes, passwordHash ):
+            if bcrypt.checkpw(bytes, passwordHash):
                 print("Sucess the hash " + str(passwordHash) + " equals " + lineR)
                 break
             if count == 10001:
@@ -150,7 +151,7 @@ def Dictionary():
 
     path = "/home/adam/Documents/Gitshub2/New-Password-Cracker/paslist.txt"
     print(os.getcwd())
-    password = sys.argv[1]
+    password = sys.argv[1].rstrip()
     #test = open(path,'r')
     #print(test.readline(2))
     #test.close()

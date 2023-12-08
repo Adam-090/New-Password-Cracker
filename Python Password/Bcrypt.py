@@ -1,7 +1,12 @@
 #Bcrypt
 import bcrypt
 import os 
+
+
+
+
 def Bcrypt():
+
     passwordHash = (input("Enter the hash you want to convert ")).encode('utf-8')
     paths = "/home/adam/Documents/Gitshub2/New-Password-Cracker/paslist.txt"
     print(os.getcwd())
@@ -25,7 +30,7 @@ def Bcrypt():
             # if line is empty
             # end of file is reached
             print("Trying: " + str(lineR))
-            if bcrypt.checkpw(bytes, passwordHash ):
+            if bcrypt.checkpw(bytes, passwordHash):
                 print("Sucess the hash " + str(passwordHash) + " equals " + lineR)
                 break
             if count == 10001:
